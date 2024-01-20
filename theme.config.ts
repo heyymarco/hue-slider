@@ -1,4 +1,4 @@
-import '@reusable-ui/typos/effects'
+// import '@reusable-ui/typos/effects' // do not bootstrap the typos (paragraph, headings, etc), keeps all default
 import { defineTheme, colorValues, borderValues, borders, borderRadiuses } from '@reusable-ui/core'
 import { rangeValues } from '@reusable-ui/range'
 

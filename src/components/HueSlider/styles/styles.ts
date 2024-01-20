@@ -44,7 +44,7 @@ import {
 export const usesHueSliderLayout = (options?: OrientationableOptions) => {
     // options:
     const orientationableStuff = usesOrientationable(options, defaultOrientationableOptions);
-    const {ifOrientationInline, ifOrientationBlock, orientationInlineSelector, orientationBlockSelector} = orientationableStuff;
+    const {orientationInlineSelector, orientationBlockSelector} = orientationableStuff;
     const parentOrientationInlineSelector = `${orientationInlineSelector}&`;
     const parentOrientationBlockSelector  = `${orientationBlockSelector }&`;
     const ifParentOrientationInline       = (styles: CssStyleCollection) => rule(parentOrientationInlineSelector, styles);
@@ -73,14 +73,14 @@ export const usesHueSliderLayout = (options?: OrientationableOptions) => {
                 // backgrounds:
                 ...ifParentOrientationInline({
                     backgroundImage  : [[
-                        // 'linear-gradient(90deg in hsl increasing hue, hsl(0, 100%, 50%), hsl(359.95, 100%, 50%))',
+                        // 'linear-gradient(90deg in hsl increasing hue, hsl(0, 100%, 50%), hsl(359.95, 100%, 50%))', // doesn't work on old browsers
                         "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAABCAYAAADzaTTzAAAAAXNSR0IArs4c6QAAAFpJREFUOE/lk1EKgDAMQ59B739g7SZjDEp/BBmbzI9QQqANpNmyyBzA7rAwT4ILOKmzYQY35yPej77e6obgjwHPDHbgY8me0y3V9pWO9e6tx309uUgfaO64gG9YrbgDh794DAAAAABJRU5ErkJggg==')",
                     ]],
                     backgroundRepeat : 'repeat-y',
                 }),
                 ...ifParentOrientationBlock({
                     backgroundImage  : [[
-                        // 'linear-gradient(0deg in hsl increasing hue, hsl(0, 100%, 50%), hsl(359.95, 100%, 50%))',
+                        // 'linear-gradient(0deg in hsl increasing hue, hsl(0, 100%, 50%), hsl(359.95, 100%, 50%))', // doesn't work on old browsers
                         "url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAFoCAYAAACWmZGvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAB2SURBVEhL7ZSxDoAgEEPLIf//wRBqIUYlMLngcMvLtRxLUwARacCBAWmU7rGhSlgBYLmhTw92eauDXXsNCCCNUVKhDUjuTR6F3iyUG3mU7jUADLSoH8uU3BoKd5pW+LinTq9v/M+joFopOiV3QY/1Ld3rQA0oJ+UcwNCeq9/TAAAAAElFTkSuQmCC')",
                     ]],
                     backgroundRepeat : 'repeat-x',
@@ -99,6 +99,7 @@ export const usesHueSliderLayout = (options?: OrientationableOptions) => {
                 ...children(thumbElm, {
                     // animations:
                     filter: 'none !important',
+                    transition: 'none !important', // no transition, immediately change the background color
                     
                     
                     
