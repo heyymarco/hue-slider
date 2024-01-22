@@ -8,4 +8,5 @@
   background: url('/soft-rainbow.svg');
   background-size: cover;
   background-repeat: no-repeat;
+  justify-items: center;
 }

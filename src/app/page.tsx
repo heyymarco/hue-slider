@@ -23,9 +23,34 @@ export default function Home() {
             />
             <HueSlider
                 // variants:
+                size='lg'
+                theme='primary'
+                nude={false}
+                
+                
+                
+                // values:
+                value={hue}
+                onChange={(event) => setHue(event.target.valueAsNumber)}
+            />
+            <HueSlider
+                // variants:
                 size='sm'
                 theme='primary'
                 orientation='block'
+                
+                
+                
+                // values:
+                value={hue}
+                onChange={(event) => setHue(event.target.valueAsNumber)}
+            />
+            <HueSlider
+                // variants:
+                size='sm'
+                theme='primary'
+                orientation='block'
+                nude={false}
                 
                 
                 

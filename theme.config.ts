@@ -34,3 +34,5 @@ rangeValues.thumbInlineSize      = '2.5em';
 rangeValues.thumbBlockSize       = '2.5em';
 rangeValues.minInlineSizeInline  = '12rem'; // for horizontal <Range>
 rangeValues.minBlockSizeBlock    = '12rem'; // for vertical <Range>
+rangeValues.cursorInline         = 'initial'; // for horizontal cursor <Range>
+rangeValues.cursorBlock          = 'initial'; // for vertical cursor <Range>
